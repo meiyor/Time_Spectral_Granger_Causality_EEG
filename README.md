@@ -39,23 +39,26 @@ time_frequency_gc_single_edf('JF_20250225', '_Fz_reref')
 The function **time_frequency_gc_single_edf** performs:
  
   1) **Data Loading**
+     
        Supports large EDF files via chunked reading, or direct loading using biosig depending on the size of the file.
+     
   2) **Re-referencing**
+     
        Average reference or Fz reference.
   3) **Resampling**
      Downsample to 256 Hz.
-  4) **Filtering**
+  5) **Filtering**
     a) Notch filter at 60 Hz.
     b) Bandpass filter (0.1–100 Hz).
-  5)  **Artifact Reduction**
+  6)  **Artifact Reduction**
     a) ASR-based cleaning (light EMG suppression).
     b) ICA decomposition (runica).
     c) Automatic IC rejection (heuristic-based) adding light severity suppressing for avoiding GC matrices singularity.
-  6) **ECG Artifact Removal**
+  7) **ECG Artifact Removal**
      Lagged linear regression using ECG reference channel
-  7) **Channel Localization**
+  8) **Channel Localization**
      Standard 10–20 montage assignment
-  8) **GC Analysis** (optional) **can be evaluated later**
+  9) **GC Analysis** (optional) **can be evaluated later**
      Time-domain and spectral GC via **MVGC toolbox**
 
 After executing this preprocessing command you will observe the folllowing **.mat** files. The filename string will contain the suffix you added as input before the .mat extension.
