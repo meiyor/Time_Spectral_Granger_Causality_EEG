@@ -6,8 +6,20 @@ Granger Causality (GC) pipeline for evaluating channels predicitability from dat
 Before running be sure you have installed **Matlab** version **R2025a** or more recent as well as
 
 1. Current **EEGlab** version downloaded from the SCCN [download website](https://sccn.ucsd.edu/eeglab/download.php)
-2. MVGC v1.0 versson from the [stable Github link](https://github.com/lcbarnett/MVGC1) supporting the 
+2. MVGC v1.0 versson from the [stable Github link](https://github.com/lcbarnett/MVGC1) supporting the GC calculation
 
-Before running any command from Matlab prompt localized in your local machine using **cd** or from Matlab file **navigation bar**
+Before running any command from Matlab prompt localized in your local machine using **cd** or from Matlab file **navigation bar**. Follow this command:
+
+```matlab
+cd /path/to/Time_Spectral_Granger_Causality_EEG
+```
+
 ## 1.Run EEG preprocessing
+
+For execution a Matlab preprocessing follow this command:
+
+```matlab
+time_frequency_gc_single_edf('JF_20250225', '_Fz_reref')
+```
+
 
