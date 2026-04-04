@@ -19,7 +19,21 @@ cd /path/to/Time_Spectral_Granger_Causality_EEG
 For execution a Matlab preprocessing follow this command:
 
 ```matlab
+time_frequency_gc_single_edf('<edf_filename_local>', '<output_file_suffix>')
+```
+
+For instance it is possible to evaluate the preprocessing with average rerefence using this command
+
+```matlab
+time_frequency_gc_single_edf('JF_20250225', '_average')
+```
+
+Or with Fz rereference with the following command
+
+```matlab
 time_frequency_gc_single_edf('JF_20250225', '_Fz_reref')
 ```
+
+**Depending on the throughput quality and the amount of cores your of your machine processor this preprocessing can take 15-20mins for each patient .ef file**
 
 
