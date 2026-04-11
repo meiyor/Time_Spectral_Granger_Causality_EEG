@@ -93,25 +93,20 @@ $$
 $$
 
 where:
-- \( A_k \) are autoregressive coefficients or **VAR** matrix. 
-- \( p \) is the model order.
-- \( \sigma(t) \) is the innovation (residual noise) or **SIGMA** matrix.
-- \( \lambda \) is a scaling factor.
+$A_{k}$ are autoregressive coefficients or **VAR** matrix. 
+- $p$ is the model maximum order.
+- $\sigma(t)$ is the innovation (residual noise) or **SIGMA** matrix.
+- $\lambda$ is a scaling factor.
 
-To evaluate whether \( y \) Granger-causes \( x \), we compare two models:
-
-- **Reduced model**: prediction using only past of \( x \)
-- **Full model**: prediction using past of \( x \) and \( y \)
-
-The GC score is defined as:
+In general way the **MVGC** toolbox evaluate whether $x$ Granger-causes $\hat{x}$. After $A_{k}$ and $sigma$ are estimatied, GC score is defined as taking into account a general model from all the possible contributions from any channel $y$:
 
 $$
-F_{y \to x} = \ln \frac{\operatorname{var}(\epsilon_x^{\text{reduced}})}{\operatorname{var}(\epsilon_x^{\text{full}})}
+F_{x \to \hat{x}} = \ln \frac{\text{var}(\epsilon_x^{\text{reduced}})}{\text{var}(\epsilon_x^{\text{full}})}
 $$
 
 where:
-- \( \epsilon_x^{\text{full}} \) is the residual of the full model
-- \( \epsilon_x^{\text{reduced}} \) is the residual of the reduced model
+- $\epsilon_x^{\text{full}}$ is the residual of the full model
+- $\epsilon_x^{\text{reduced}}$ is the residual of the reduced model
 
 A higher value of \( F_{y \to x} \) indicates stronger predictive influence from \( y \) to \( x \).
 
