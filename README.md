@@ -129,5 +129,6 @@ These quantities are used internally in the MVGC toolbox for stable VAR estimati
 Before running any GC estimation take into account the following limitation of this toolbox:
 
 1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
+2) The number of channels included in the analysis is also a very important factor to avoid overfitting and numerical instabilities on $A$ or $\Sigma$ estimations.
 
 
