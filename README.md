@@ -87,6 +87,6 @@ After you get the preprocessed files in the **preprocessed_save**, you can proce
 
 ### GC definition following [Barret el al 2013]
 
-1) EEG channels are highly colinear and can generate singularities and numerical instabilities if model overfitting is not control, such as Spectral Radius larger than one, or $ \mathcal(A) $. or $\Sigma $ prediction singularities.
+1) EEG channels are highly colinear and can generate singularities and numerical instabilities if model overfitting is not control, such as Spectral Radius larger than one, or $\mathcal(A)$. or $\Sigma$ prediction singularities.
 
 
