@@ -137,6 +137,17 @@ Before running any GC estimation take into account the following limitation of t
 
 1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
 2) The number of channels included in the analysis is also a very important factor **to avoid overfitting and numerical instabilities** on $A$ or $\Sigma$ estimations. For this particular analysis we tested the GC between this group channels out of [Xu et al 2023 dataset](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) including frontal, central, and Temporal-Parietal-Occipital (TPO) regions ['T3','T4','T5','T6','P3','P4','O1','O2','C3','C4','F3','F4','F7','F8'].
-3) $p$ representing the maximum order of the estimation is also really important for avoiding model overfitting or numerical instabilities. 
+3) $p$ representing the maximum order of the estimation is also really important for avoiding model overfitting or numerical instabilities. Extending an hyperparameter tuning is still an open plausible option in this case.
+
+Thus, the function **reading_eeg_saved_MVGC**` implements the full pipeline for loading preprocessed EEG stages from **preprocessed_save** folder and performing GC analysis using the MVGC toolbox.
+
+### Overview
+
+The pipeline performs the following steps:
+
+1. Load preprocessed EEG segments (S1–S11)
+2. Visualize stacked EEG signals from those segments
+3. Apply GC estimation using MVGC on each segments
+4. Generate frequency-specific GC measures for the different EEG band specified in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120)
 
 
