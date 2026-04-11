@@ -87,7 +87,7 @@ After you get the preprocessed files in the **preprocessed_save**, you can proce
 
 ### GC definition following [Barret et al 2013](https://arxiv.org/pdf/1606.08644)
 
-For defininng the GC between two EEG channels $x$ and $\hat(x)$, we must first establish the linear interaction between both channels in time as follows:
+For defininng the GC between two EEG channels $x$ and $\hat{x}$, we must first establish the linear interaction between both channels in time as follows:
 
 $$ 
     \hat{x(t)} = \sum_{k=0}^{p} A_{k} x(t-k) + \lambda \sigma(t)
