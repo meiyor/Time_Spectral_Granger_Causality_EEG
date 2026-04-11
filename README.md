@@ -132,7 +132,87 @@ $$
 \Sigma
 $$
 
-These quantities are used internally in the MVGC toolbox for stable **VAR** estimation and spectral GC computation.
+These quantities are used internally in the MVGC toolbox for stable **VAR** estimation and spectral GC computation. With the following considerations.
+
+### Autocovariance Representation
+
+The autocovariance function used for inferring the VAR coefficients $A_k$ and the residual covariance $\Sigma$ is defined as:
+
+$$
+\Gamma(\tau) = \text{Cov}(x(t), x(t - \tau)) = \mathbb{E}[x(t)x(t - \tau)^\top], \quad \tau = 0,1,2,\dots
+$$
+
+where $\Gamma(\tau) \in \mathbb{R}^{n \times n}$ is the lag-$\tau$ covariance matrix for an $n$-dimensional signal. $tau$ is the maximum order of the Autocovariance model $p$.
+
+---
+
+### Toeplitz Structure
+
+The sequence of autocovariance matrices defines a block Toeplitz matrix:
+
+$$
+\mathbf{\Gamma}_p =
+\begin{bmatrix}
+\Gamma(0) & \Gamma(1) & \Gamma(2) & \cdots & \Gamma(p-1) \\
+\Gamma(1)^\top & \Gamma(0) & \Gamma(1) & \cdots & \Gamma(p-2) \\
+\Gamma(2)^\top & \Gamma(1)^\top & \Gamma(0) & \cdots & \Gamma(p-3) \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+\Gamma(p-1)^\top & \Gamma(p-2)^\top & \Gamma(p-3)^\top & \cdots & \Gamma(0)
+\end{bmatrix}
+$$
+
+This structure arises from the stationarity assumption of the VAR process.
+
+---
+
+### Yule–Walker Equations
+
+The **VAR(p)** model parameters are estimated by solving the multivariate **Yule–Walker** equations:
+
+$$
+\Gamma(\tau) = \sum_{k=1}^{p} A_k \Gamma(\tau - k), \quad \tau = 1,2,\dots,p
+$$
+
+This linear system can be written compactly as:
+
+$$
+\begin{bmatrix}
+\Gamma(1) \\
+\Gamma(2) \\
+\vdots \\
+\Gamma(p)
+\end{bmatrix}
+=
+\begin{bmatrix}
+A_1 & A_2 & \cdots & A_p
+\end{bmatrix}
+\mathbf{\Gamma}_p
+$$
+
+Solving this system yields the **VAR** coefficient matrices $A_k$.
+
+---
+
+### Residual Covariance Estimation
+
+Once the coefficients $A_k$ are estimated, the residual covariance matrix is given by:
+
+$$
+\Sigma = \Gamma(0) - \sum_{k=1}^{p} A_k \Gamma(k)^\top
+$$
+
+The matrix $\Sigma$ represents the covariance of the innovation process and is critical for computing Granger causality.
+
+---
+
+### Connection to MVGC
+
+The MVGC toolbox uses this autocovariance sequence to:
+
+- estimate stable VAR models
+- compute time-domain and spectral GC
+- ensure positive-definiteness of \( \Sigma \)
+- verify model stability (spectral radius \( < 1 \))
 
 Before running any GC estimation take into account the following limitation of this toolbox:
 
