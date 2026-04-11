@@ -99,6 +99,7 @@ $A_{k}$ are autoregressive coefficients or **VAR** matrix.
 - $\lambda$ is a scaling factor.
 
 In general way the **MVGC** toolbox evaluate whether $x$ Granger-causes $\hat{x}$. After $A_{k}$ and $sigma$ are estimatied, GC score is defined as taking into account a general model from all the possible contributions from any channel $y$. For extend the channel to channel GC to a full channel extended model, we can rewrite the interaction equation following  this:
+
 $$
 \hat{x}(t) = \sum_{k=1}^{p} A_k x(t-k) + \sum_{k=1}^{p} B_k y(t-k)  + \epsilon(t)
 $$
