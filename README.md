@@ -98,17 +98,21 @@ $A_{k}$ are autoregressive coefficients or **VAR** matrix.
 - $\sigma(t)$ is the innovation (residual noise) or **SIGMA** matrix.
 - $\lambda$ is a scaling factor.
 
-In general way the **MVGC** toolbox evaluate whether $x$ Granger-causes $\hat{x}$. After $A_{k}$ and $sigma$ are estimatied, GC score is defined as taking into account a general model from all the possible contributions from any channel $y$:
+In general way the **MVGC** toolbox evaluate whether $x$ Granger-causes $\hat{x}$. After $A_{k}$ and $sigma$ are estimatied, GC score is defined as taking into account a general model from all the possible contributions from any channel $y$. For extend the channel to channel GC to a full channel extended model, we can rewrite the interaction equation following  this:
 
+\hat{x}(t) = \sum_{k=1}^{p} A_k x(t-k) + \sum_{k=1}^{p} B_k y(t-k)  + \epsilon(t)
+
+Thus the GC estimatiion for each channel $y$ is defined as
 $$
-F_{x \to \hat{x}} = \ln \frac{\text{var}(\epsilon_x^{\text{reduced}})}{\text{var}(\epsilon_x^{\text{full}})}
+F_{y \to \hat{x}} = \ln \frac{\text{var}(\epsilon_x^{\text{reduced}})}{\text{var}(\epsilon_x^{\text{full}})}
 $$
+
 
 where:
 - $\epsilon_x^{\text{full}}$ is the residual of the full model
 - $\epsilon_x^{\text{reduced}}$ is the residual of the reduced model
 
-A higher value of \( F_{y \to x} \) indicates stronger predictive influence from \( y \) to \( x \).
+A higher value of $F_{y \to x}$ indicates stronger predictive influence from any $y$ to $\hat{x}$.
 
 ### Autocovariance Representation
 
