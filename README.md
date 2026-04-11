@@ -134,6 +134,8 @@ $$
 
 These quantities are used internally in the MVGC toolbox for stable **VAR** estimation and spectral GC computation. With the following considerations.
 
+---
+
 ### Autocovariance Representation
 
 The autocovariance function used for inferring the VAR coefficients $A_k$ and the residual covariance $\Sigma$ is defined as:
@@ -176,13 +178,7 @@ $$
 This linear system can be written compactly as:
 
 $$
-\begin{bmatrix}
-\Gamma(1) \\
-\Gamma(2) \\
-\vdots \\
-\Gamma(p)
-\end{bmatrix}
-=
+\Gamma(\tau) =
 \begin{bmatrix}
 A_1 & A_2 & \cdots & A_p
 \end{bmatrix}
@@ -211,8 +207,8 @@ The MVGC toolbox uses this autocovariance sequence to:
 
 - estimate stable VAR models
 - compute time-domain and spectral GC
-- ensure positive-definiteness of \( \Sigma \)
-- verify model stability (spectral radius \( < 1 \))
+- ensure positive-definiteness of $\Sigma$
+- verify model stability $\rho < 1$
 
 Before running any GC estimation take into account the following limitation of this toolbox:
 
