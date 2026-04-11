@@ -179,12 +179,17 @@ $$
 This linear system can be written compactly as:
 
 $$
-\Gamma(\tau) = \begin{bmatrix}
+\Gamma(\tau) = 
+
+\begin{bmatrix}
 \Gamma(1) \\
 \Gamma(2) \\
 \vdots \\
 \Gamma(p)
-\end{bmatrix} =
+\end{bmatrix} 
+
+=
+
 \begin{bmatrix}
 A_1 & A_2 & \cdots & A_p
 \end{bmatrix}
