@@ -83,8 +83,7 @@ Each file contains an EEGlab structure for each Near-Dead-Evennt (NDE) stages de
 
 ## 2. GC Estimation using MVGC toolbox
 
-After you get the preprocessed files in the **preprocessed_save**, you can proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. Before runing any GC estimation take into account the following limitation of this toolbox:
-
+After you get the preprocessed files in the **preprocessed_save**, you can proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. 
 ### GC definition following [Barret et al 2013](https://arxiv.org/pdf/1606.08644)
 
 For defininng the GC between two EEG channels $x$ and $\hat{x}$, we must first establish the linear interaction between both channels in time as follows:
@@ -92,6 +91,8 @@ For defininng the GC between two EEG channels $x$ and $\hat{x}$, we must first e
 $$ 
     \hat{x(t)} = \sum_{k=0}^{p} A_{k} x(t-k) + \lambda \sigma(t)
 $$
+
+Before running any GC estimation take into account the following limitation of this toolbox:
 
 1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
 
