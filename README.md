@@ -85,6 +85,8 @@ Each file contains an EEGlab structure for each Near-Dead-Evennt (NDE) stages de
 
 After you get the preprocessed files in the **preprocessed_save**, you can proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. Before runing any GC estimation take into account the following limitation of this toolbox:
 
-1) EEG channels are highly colinear and can generate singularities and numerical instabilities if model overfitting is not control, such as Spectral Radius larger than one, or \mathcal(A). or \Sigma prediction singularities.
+### GC definition following [Barret el al 2013]
+
+1) EEG channels are highly colinear and can generate singularities and numerical instabilities if model overfitting is not control, such as Spectral Radius larger than one, or $$ \mathcal(A) $$. or $$\Sigma $$ prediction singularities.
 
 
