@@ -73,7 +73,7 @@ The function **time_frequency_gc_single_edf** performs:
      
      Time-domain and spectral GC via **MVGC toolbox**
 
-After executing this preprocessing command you will observe the folllowing **.mat** files. The filename string will contain the suffix you added as input before the .mat extension.
+After executing this preprocessing command you will observe the following **.mat** files. The filename string will contain the suffix you added as input before the .mat extension.
 In this case the suffix string is empty. This for the sake of comparison between different preprocessing options and for facilitating the exploration of resulting files across the **result_plots**, **preprocessed_save**, and **GC_estimation** folders.
 
 <img width="709" height="398" alt="image" src="https://github.com/user-attachments/assets/fa0e2606-ddea-4234-88b7-626b82c7ffeb" />
@@ -81,5 +81,8 @@ In this case the suffix string is empty. This for the sake of comparison between
 
 Each file contains an EEGlab structure for each Near-Dead-Evennt (NDE) stages described in [Xu et al 2023] between **S1-S11** stages: having S1 as baseline stage before removing the ventilator, and from S2-S11 all the subsequent stages without the ventilator, switching multiple time the peacemaker activation. The file denoted with the preffix **JF_20250225** contains information with all the stages **S1-S11** separated for an adeaquate load using [**edfread.m**](https://www.mathworks.com/help/signal/ref/edfread.html). For loading large .edf files take into account that **edfreadm.m** can represent large loading throuput times. It is recommended a file or time-length segmentation before or as **edfread.m** input parameters.
 
+## 2. GC Estimation using MVGC toolbox
+
+After you get the preprocessed files in the **preprocessed_save**, you can proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. Before runing any GC estimation take into account the following limitation of this toolbox:
 
 
