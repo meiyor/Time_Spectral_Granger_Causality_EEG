@@ -121,7 +121,7 @@ A higher value of $F_{y \to x}$ indicates stronger predictive influence from any
 The autocovariance function used for inferring $A_{k}$ and $sigma$ is defined as
 
 $$
-\Gamma(\tau) = \text{Cov}(x(t), x(t - \tau)), \quad \tau = 0,1,2,\dots \quad
+\Gamma(\tau) = \text{Cov}(x(t), x(t - \tau)), \quad
 \Gamma(\tau) = \mathbb{E}(x(t),x(t - \tau)), \quad \tau = 0,1,2,\dots
 $$
 
@@ -136,6 +136,7 @@ These quantities are used internally in the MVGC toolbox for stable **VAR** esti
 Before running any GC estimation take into account the following limitation of this toolbox:
 
 1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
-2) The number of channels included in the analysis is also a very important factor to avoid overfitting and numerical instabilities on $A$ or $\Sigma$ estimations. For this particular analysis we tested the GC between this channels out of [Xu et al 2023] dataset 
+2) The number of channels included in the analysis is also a very important factor **to avoid overfitting and numerical instabilities** on $A$ or $\Sigma$ estimations. For this particular analysis we tested the GC between this group channels out of [Xu et al 2023 dataset](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) including frontal, central, and Temporal-Parietal-Occipital (TPO) regions ['T3','T4','T5','T6','P3','P4','O1','O2','C3','C4','F3','F4','F7','F8'].
+3) $p$ representing the maximum order of the estimation is also really important for avoiding model overfitting or numerical instabilities. 
 
 
