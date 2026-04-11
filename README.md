@@ -93,6 +93,6 @@ $$
     \hat{x(t)} = \sum_{k=0}^{p} A_{k} x(t-k) + \lambda \sigma(t)
 $$
 
-1) EEG channels are highly colinear and can generate singularities and numerical instabilities if model overfitting is not control, such as Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities.
+1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
 
 
