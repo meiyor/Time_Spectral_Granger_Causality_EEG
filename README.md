@@ -154,6 +154,7 @@ The sequence of autocovariance matrices defines a block Toeplitz matrix:
 
 $$
 \mathbf{\Gamma}_p =
+
 \begin{bmatrix}
 \Gamma(0) & \Gamma(1) & \Gamma(2) & \cdots & \Gamma(p-1) \\
 \Gamma(1)^\top & \Gamma(0) & \Gamma(1) & \cdots & \Gamma(p-2) \\
@@ -178,7 +179,12 @@ $$
 This linear system can be written compactly as:
 
 $$
-\Gamma(\tau) =
+\Gamma(\tau) = \begin{bmatrix}
+\Gamma(1) \\
+\Gamma(2) \\
+\vdots \\
+\Gamma(p)
+\end{bmatrix} =
 \begin{bmatrix}
 A_1 & A_2 & \cdots & A_p
 \end{bmatrix}
