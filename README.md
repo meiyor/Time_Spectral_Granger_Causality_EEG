@@ -151,4 +151,3 @@ The pipeline performs the following steps:
 3. Apply GC estimation using MVGC on each segments
 4. Generate frequency-specific GC measures for the different EEG band specified in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120), such as, $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, and $\gamma_{2}$.
 
-
