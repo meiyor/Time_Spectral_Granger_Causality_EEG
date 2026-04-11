@@ -92,6 +92,45 @@ $$
     \hat{x(t)} = \sum_{k=0}^{p} A_{k} x(t-k) + \lambda \sigma(t)
 $$
 
+where:
+- \( A_k \) are autoregressive coefficients or **VAR** matrix. 
+- \( p \) is the model order.
+- \( \sigma(t) \) is the innovation (residual noise) or **SIGMA** matrix.
+- \( \lambda \) is a scaling factor.
+
+To evaluate whether \( y \) Granger-causes \( x \), we compare two models:
+
+- **Reduced model**: prediction using only past of \( x \)
+- **Full model**: prediction using past of \( x \) and \( y \)
+
+The GC score is defined as:
+
+$$
+F_{y \to x} = \ln \frac{\operatorname{var}(\epsilon_x^{\text{reduced}})}{\operatorname{var}(\epsilon_x^{\text{full}})}
+$$
+
+where:
+- \( \epsilon_x^{\text{full}} \) is the residual of the full model
+- \( \epsilon_x^{\text{reduced}} \) is the residual of the reduced model
+
+A higher value of \( F_{y \to x} \) indicates stronger predictive influence from \( y \) to \( x \).
+
+### Autocovariance Representation
+
+The autocovariance function is defined as:
+
+$$
+\Gamma(\tau) = \operatorname{cov}(x(t), x(t - \tau)), \quad \tau = 0,1,2,\dots
+$$
+
+and the residual covariance matrix is denoted as:
+
+$$
+\Sigma
+$$
+
+These quantities are used internally in the MVGC toolbox for stable VAR estimation and spectral GC computation.
+
 Before running any GC estimation take into account the following limitation of this toolbox:
 
 1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
