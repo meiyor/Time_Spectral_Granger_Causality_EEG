@@ -215,7 +215,7 @@ Before running any GC estimation take into account the following limitation of t
 
 Thus, the function **reading_eeg_saved_MVGC**` implements the full pipeline for loading preprocessed EEG stages from **preprocessed_save** folder and performing GC analysis using the MVGC toolbox.
 
-### Overview
+### Function Overview
 
 The pipeline performs the following steps:
 
@@ -228,4 +228,28 @@ Use the following the following matlab command for executing the
 
 ```matlab
 reading_eeg_saved_MVGC('JF_20250225', '_remove_midline')
+
+The full GC estimation workflow consist in integrating data loading, visualization, and MVGC-based inference into a single execution pipeline.
+
+At a high level, the function:
+
+- Iterates over pre-segmented EEG stages (S1–S11) stored as `.mat` files  
+- Reconstructs EEGLAB structures ('EEG_k') for each stage  
+- Aggregates all stages for global visualization (stacked plots)  
+- Performs stage-specific GC analysis by calling the core routine:
+  
+  ```matlab
+  MVGC_application(X_sub_eeg.EEG_k, ...)
 ```
+
+After the processes finishes you will obtain the following plots for the stacked EEG segments visualization
+
+<img width="1102" height="545" alt="image" src="https://github.com/user-attachments/assets/e40a95aa-bae6-46fd-ba1a-017b99fc3979" />
+
+And some examples of GC matrix in different frequency bands for instance $\gamma_{1}$ can be seen here
+
+<img width="1156" height="572" alt="image" src="https://github.com/user-attachments/assets/b22174e2-1c1c-485f-a3b1-67f72ca41fee" />
+
+<img width="1154" height="570" alt="image" src="https://github.com/user-attachments/assets/b72b5c8f-9f17-48ec-9976-562409d9f485" />
+
+These preliminary results shows an **increased causality in $\text{FC} \leftarrow \{TPO}$ areas in S4 and S6** for patient **JF_20250225**.
