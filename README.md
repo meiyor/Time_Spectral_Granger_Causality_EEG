@@ -3,7 +3,7 @@ Granger Causality (GC) pipeline for evaluating channels predictability from data
 
 <img width="1820" height="762" alt="image" src="https://github.com/user-attachments/assets/e911f1eb-835d-4dc8-9952-53a0f66be33e" />
 
-An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas and in **S4** and **S6** stages. **P4** and **O2** are causality hubs receiving most of the $\text{FC}$ connections from the entire  $\text{FC}$ cortex in the right $\text{TPO}$ areas. Similar GC measures are concentrated in $\theta$ and $\alpha$ bands for **S3** and **S4** being consistent with PAC and NTSE measures reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120) in the right $\text{TPO}$ areas.
+An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S4** and **S6** stages. **P4** and **O2** are causality hubs receiving most of the $\text{FC}$ connections from the entire  $\text{FC}$ cortex. Similar GC measures are concentrated in $\theta$ and $\alpha$ bands for **S3** and **S4** being consistent with the right PAC and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
 
 ## Requirements
 
@@ -87,7 +87,11 @@ Each file contains an EEGlab structure for each Near-Dead-Event (NDE) stages des
 
 ## 2. GC Estimation using MVGC toolbox
 
-After you get the preprocessed files in the **preprocessed_save**, you can proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. 
+The broad pipeline of the GC evaluation is shown in the following Figure
+
+<img width="1245" height="359" alt="image" src="https://github.com/user-attachments/assets/2606beaf-f96b-4fc3-abcd-22b79b41d554" />
+
+After the preprocessed files are located in the **preprocessed_save**, it is possible to proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. 
 ### GC definition following [Barret et al 2013](https://arxiv.org/pdf/1606.08644)
 
 For defining the GC between two EEG channels $x$ and $\hat{x}$, we must first establish the linear interaction between both channels in time as follows:
@@ -221,10 +225,6 @@ with
 ```
 
 assuring a finite spectral rank of $\mathcal{A}$.
-
-To summarize a broad pipeline of this evaluation is shown in the following Figure
-
-<img width="1245" height="359" alt="image" src="https://github.com/user-attachments/assets/2606beaf-f96b-4fc3-abcd-22b79b41d554" />
 
 ---
 
