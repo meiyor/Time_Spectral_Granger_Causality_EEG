@@ -1,4 +1,4 @@
-<img width="1247" height="359" alt="image" src="https://github.com/user-attachments/assets/1b9f6dcb-47a0-4430-a828-7c0914c4c4d0" /># Time_Spectral_Granger_Causality_EEG
+# Time_Spectral_Granger_Causality_EEG
 Granger Causality (GC) pipeline for evaluating channels predicitability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link here and download the entire [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu).
 
 ## Requirements
