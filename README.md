@@ -174,7 +174,7 @@ $$
 This linear system can be written compactly as:
 
 ```math
-\mathbf{\Gamma}_1 =
+\Gamma_1 =
 \begin{bmatrix}
 \Gamma(1) & \Gamma(2) & \cdots & \Gamma(p)
 \end{bmatrix}
@@ -182,8 +182,8 @@ This linear system can be written compactly as:
 \begin{bmatrix}
 A_1 & A_2 & \cdots & A_p
 \end{bmatrix}
-\mathbf{\Gamma}_p
-
+\Gamma_p
+```
 ---
 
 ### Residual Covariance Estimation
