@@ -126,11 +126,7 @@ $$
 \Gamma(\tau) = \mathbb{E}(x(t),x(t - \tau)), \quad \tau = 0,1,2,\dots
 $$
 
-and the residual covariance matrix is denoted as:
-
-$$
-\Sigma
-$$
+and the residual covariance matrix is denoted as $Sigma$.
 
 These quantities are used internally in the MVGC toolbox for stable **VAR** estimation and spectral GC computation. With the following considerations.
 
@@ -154,7 +150,6 @@ The sequence of autocovariance matrices defines a block Toeplitz matrix:
 
 $$
 \mathbf{\Gamma}_p =
-
 \begin{bmatrix}
 \Gamma(0) & \Gamma(1) & \Gamma(2) & \cdots & \Gamma(p-1) \\
 \Gamma(1)^\top & \Gamma(0) & \Gamma(1) & \cdots & \Gamma(p-2) \\
@@ -178,7 +173,6 @@ $$
 
 This linear system can be written compactly as:
 
-```markdown
 ```math
 \mathbf{\Gamma}_1 =
 \begin{bmatrix}
