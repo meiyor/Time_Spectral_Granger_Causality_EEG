@@ -196,6 +196,10 @@ $$
 
 The matrix $\Sigma$ represents the covariance of the innovation process and is critical for computing Granger causality.
 
+An evaluation of numerical stability is reflecting to keep the Spectral Radius $\rho$ of $\Gamma$ lower than one in both **VAR** and **SIGMA** estimations
+following this mathematical formulation
+
+
 ---
 
 ### Connection to MVGC
@@ -209,7 +213,7 @@ The MVGC toolbox uses this autocovariance sequence to:
 
 Before running any GC estimation take into account the following limitation of this toolbox:
 
-1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius larger than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
+1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius $\rho$ smaller than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
 2) The number of channels included in the analysis is also a very important factor **to avoid overfitting and numerical instabilities** on $A$ or $\Sigma$ estimations. For this particular analysis we tested the GC between this group channels out of [Xu et al 2023 dataset](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) including frontal, central, and Temporal-Parietal-Occipital (TPO) regions ['T3','T4','T5','T6','P3','P4','O1','O2','C3','C4','F3','F4','F7','F8'].
 3) $p$ representing the maximum order of the estimation is also really important for avoiding model overfitting or numerical instabilities. Extending an hyperparameter tuning is still an open plausible option in this case.
 
