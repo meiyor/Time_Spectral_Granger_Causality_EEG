@@ -197,8 +197,26 @@ $$
 The matrix $\Sigma$ represents the covariance of the innovation process and is critical for computing Granger causality.
 
 An evaluation of numerical stability is reflecting to keep the Spectral Radius $\rho$ of $\Gamma$ lower than one in both **VAR** and **SIGMA** estimations
-following this mathematical formulation
+following this mathematical formulation:
 
+```math
+\mathcal{A} =
+\begin{bmatrix}
+A_1 & A_2 & \cdots & A_{p-1} & A_p \\
+I   & 0   & \cdots & 0       & 0 \\
+0   & I   & \cdots & 0       & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+0   & 0   & \cdots & I       & 0
+\end{bmatrix}
+```
+
+with
+
+```math
+\rho(\mathcal{A}) < 1
+```
+
+assuring a finite spectral rank of $\mathcal{A$.
 
 ---
 
