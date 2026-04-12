@@ -109,7 +109,7 @@ $A_{k}$ are autoregressive coefficients or **VAR** matrix.
 - $\sigma(t)$ is the innovation (residual noise) or **SIGMA** matrix.
 - $\lambda$ is a scaling factor.
 
-In general way the **MVGC** toolbox evaluate whether $x$ Granger-causes $\hat{x}$. After $A_{k}$ and $sigma$ are estimatied, GC score is defined as taking into account a general model from all the possible contributions from any channel $y$. For extend the channel to channel GC to a full channel extended model, we can rewrite the interaction equation following this formulation:
+The **MVGC** toolbox evaluate whether $x$ Granger-causes $\hat{x}$. After $A_{k}$ and $\sigma$ are estimatied, GC score is defined as taking into account a general model from all the possible contributions from any channel $y$. For extend the channel to channel GC to a full channel extended model, we can rewrite the interaction equation following this formulation:
 
 $$
 \hat{x}(t) = \sum_{k=1}^{p} A_k x(t-k) + \sum_{k=1}^{p} B_k y(t-k)  + \sigma(t)
@@ -130,7 +130,7 @@ A higher value of $F_{y \to x}$ indicates stronger predictive influence from any
 
 ### Autocovariance Representation
 
-The autocovariance function used for inferring $A_{k}$ and $sigma$ is defined as
+The autocovariance function used for inferring $A_{k}$ and $\sigma$ is defined as
 
 $$
 \Gamma(\tau) = \text{Cov}(x(t), x(t - \tau)), \quad
@@ -151,7 +151,7 @@ $$
 \Gamma(\tau) = \text{Cov}(x(t), x(t - \tau)) = \mathbb{E}[x(t)x(t - \tau)^\top], \quad \tau = 0,1,2,\dots
 $$
 
-where $\Gamma(\tau) \in \mathbb{R}^{n \times n}$ is the lag-$\tau$ covariance matrix for an $n$-dimensional signal. $tau$ is the maximum order of the Autocovariance model $p$.
+where $\Gamma(\tau) \in \mathbb{R}^{n \times n}$ is the lag-$\tau$ covariance matrix for an $n$-dimensional signal. $\tau$ is the maximum order of the Autocovariance model $p$.
 
 ---
 
