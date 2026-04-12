@@ -216,7 +216,7 @@ with
 \rho(\mathcal{A}) < 1
 ```
 
-assuring a finite spectral rank of $\mathcal{A$.
+assuring a finite spectral rank of $\mathcal{A}$.
 
 ---
 
