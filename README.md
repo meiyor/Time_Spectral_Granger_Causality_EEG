@@ -259,4 +259,4 @@ And some examples of GC matrix in different frequency bands for instance $\gamma
 
 These preliminary results shows an **increased causality in $\text{FC} \rightarrow \text{TPO}$ areas in S4 and S6** for patient **JF_20250225**.
 
-The complete execution of the GC calculation for all the $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, and $\gamma_{2}$ of patient  **JF_20250225** takes **$~approx$ 5h, 36mins, and 17 seconds on an avarage laptop**.
+The complete execution of the GC calculation for all the $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, and $\gamma_{2}$ of patient  **JF_20250225** takes **$\approx$ 5h, 36mins, and 17 seconds on an avarage laptop**.
