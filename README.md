@@ -179,17 +179,10 @@ $$
 This linear system can be written compactly as:
 
 $$
-\Gamma(\tau) = 
-
 \begin{bmatrix}
-\Gamma(1) \\
-\Gamma(2) \\
-\vdots \\
-\Gamma(p)
-\end{bmatrix} 
-
+\Gamma(1) & \Gamma(2) & \cdots & \Gamma(p)
+\end{bmatrix}
 =
-
 \begin{bmatrix}
 A_1 & A_2 & \cdots & A_p
 \end{bmatrix}
@@ -237,4 +230,6 @@ The pipeline performs the following steps:
 2. Visualize stacked EEG signals from those segments
 3. Apply GC estimation using MVGC on each segments
 4. Generate frequency-specific GC measures for the different EEG band specified in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120), such as, $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, and $\gamma_{2}$.
+
+Use the following the following matlab command for executing the 
 
