@@ -253,4 +253,4 @@ And some examples of GC matrix in different frequency bands for instance $\gamma
 
 <img width="1154" height="570" alt="image" src="https://github.com/user-attachments/assets/b72b5c8f-9f17-48ec-9976-562409d9f485" />
 
-These preliminary results shows an **increased causality in $\text{FC} \leftarrow \{TPO}$ areas in S4 and S6** for patient **JF_20250225**.
+These preliminary results shows an **increased causality in $\text{FC} \righttarrow \text{TPO}$ areas in S4 and S6** for patient **JF_20250225**.
