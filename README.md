@@ -1,5 +1,9 @@
 # Time_Spectral_Granger_Causality_EEG
-Granger Causality (GC) pipeline for evaluating channels predictability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link here and download the entire [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu).
+Granger Causality (GC) pipeline for evaluating channels predictability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link here and download the entire [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu). Preliminary topoplot results showing spectral GC for patient **JF_20250225** are shown in the following Figure.
+
+<img width="1820" height="762" alt="image" src="https://github.com/user-attachments/assets/e911f1eb-835d-4dc8-9952-53a0f66be33e" />
+
+Increased GC activation is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by observed causality measures on $\text{FC} \rightarrow \text{TPO}$ areas. P4 and O2 are consilidated as causalitiy hubs in the right TPO regions. This is consistent with PAC and NTSE measures reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
 
 ## Requirements
 
