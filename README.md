@@ -228,6 +228,7 @@ Use the following the following matlab command for executing the
 
 ```matlab
 reading_eeg_saved_MVGC('JF_20250225', '_remove_midline')
+```
 
 The full GC estimation workflow consist in integrating data loading, visualization, and MVGC-based inference into a single execution pipeline.
 
