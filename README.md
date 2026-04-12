@@ -226,3 +226,6 @@ The pipeline performs the following steps:
 
 Use the following the following matlab command for executing the 
 
+```matlab
+reading_eeg_saved_MVGC('JF_20250225', '_remove_midline')
+```
