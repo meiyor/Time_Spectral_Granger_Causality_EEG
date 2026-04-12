@@ -239,7 +239,7 @@ At a high level, the function:
 - Aggregates all stages for global visualization (stacked plots)  
 - Performs stage-specific GC analysis by calling the core routine:
   
-  ```matlab
+```matlab
   MVGC_application(X_sub_eeg.EEG_k, ...)
 ```
 
