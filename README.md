@@ -3,7 +3,7 @@ Granger Causality (GC) pipeline for evaluating channels predicitability from dat
 
 ## Requirements
 
-Before running be sure you have installed **Matlab** version **R2025a** or more recent as well as
+Before running be sure you have installed **Matlab** version **R2025a** or more recent, as well as
 
 1. Current **EEGlab** version downloaded from the SCCN [download website](https://sccn.ucsd.edu/eeglab/download.php)
 2. **MVGC v1.0 version** from the [stable Github link](https://github.com/lcbarnett/MVGC1) supporting the GC calculation used in this repo.
