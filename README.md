@@ -3,7 +3,7 @@ Granger Causality (GC) pipeline for evaluating channels predictability from data
 
 <img width="1820" height="762" alt="image" src="https://github.com/user-attachments/assets/e911f1eb-835d-4dc8-9952-53a0f66be33e" />
 
-Increased GC activation is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by observed causality measures on $\text{FC} \rightarrow \text{TPO}$ areas. P4 and O2 are consilidated as causalitiy hubs in the right TPO regions. This is consistent with PAC and NTSE measures reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
+An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas and in **S4** and **S6** stages. **P4** and **O2** are causality hubs receiving most of the $\text{FC}$ connections from the entire  $\text{FC}$ cortex in the right $\text{TPO}$ areas. Similar GC measures are concentrated in $\theta$ and $\alpha$ bands for **S3** and **S4** being consistent with PAC and NTSE measures reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120) in the right $\text{TPO}$ areas.
 
 ## Requirements
 
