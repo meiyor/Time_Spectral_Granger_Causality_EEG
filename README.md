@@ -238,7 +238,7 @@ The MVGC toolbox uses this autocovariance sequence to:
 - estimate stable VAR models
 - compute time-domain and spectral GC
 - ensure positive-definiteness of $\Sigma$
-- verify model stability $\rho < 1$
+- verify model stability $\rho(\mathcal{A}) < 1$
 
 Before running any GC estimation take into account the following limitation of this toolbox:
 
