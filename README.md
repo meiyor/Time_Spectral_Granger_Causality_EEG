@@ -1,5 +1,5 @@
 # Time_Spectral_Granger_Causality_EEG
-Granger Causality (GC) pipeline for evaluating channels predicitability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link here and download the entire [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu).
+Granger Causality (GC) pipeline for evaluating channels predictability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link here and download the entire [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu).
 
 ## Requirements
 
@@ -235,9 +235,9 @@ The MVGC toolbox uses this autocovariance sequence to:
 
 Before running any GC estimation take into account the following limitation of this toolbox:
 
-1) EEG time-series are **highly colinear** and can generate singularities and numerical instabilities if model overfitting is not controlled propely. Measures, such as, Spectral Radius $\rho$ smaller than one, or $A$. or $\Sigma$ prediction singularities are used by the toolbox to control matrix colinear ill-condition of each estimation. This information is shown during the estimation using **disp**.
+1) EEG time-series are **highly collinear** and can generate singularities and numerical instabilities if model overfitting is not controlled properly. Measures, such as, Spectral Radius $\rho$ smaller than one, or singularities in the coefficient $A$ or residual covariance $\Sigma$  are used by the toolbox to control matrix collinear ill-conditions on each estimation. This information is shown during the estimation using **disp**.
 2) The number of channels included in the analysis is also a very important factor **to avoid overfitting and numerical instabilities** on $A$ or $\Sigma$ estimations. For this particular analysis we tested the GC between this group channels out of [Xu et al 2023 dataset](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) including frontal, central, and Temporal-Parietal-Occipital (TPO) regions ['T3','T4','T5','T6','P3','P4','O1','O2','C3','C4','F3','F4','F7','F8'].
-3) $p$ representing the maximum order of the estimation is also really important for avoiding model overfitting or numerical instabilities. Extending an hyperparameter tuning is still an open plausible option in this case.
+3) $p$ representing the maximum order of the estimation is also really important to avoid model overfitting or numerical instabilities. Extending an hyperparameter tuning is still an open plausible option in this case.
 
 Thus, the function **reading_eeg_saved_MVGC**` implements the full pipeline for loading preprocessed EEG stages from **preprocessed_save** folder and performing GC analysis using the MVGC toolbox.
 
@@ -250,7 +250,7 @@ The pipeline performs the following steps:
 3. Apply GC estimation using MVGC on each segments
 4. Generate frequency-specific GC measures for the different EEG band specified in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120), such as, $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, and $\gamma_{2}$.
 
-Use the following the following matlab command for executing the 
+Use the following the following Matlab command for executing the 
 
 ```matlab
 reading_eeg_saved_MVGC('JF_20250225', '_remove_midline')
