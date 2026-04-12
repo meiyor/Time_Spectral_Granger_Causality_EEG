@@ -115,7 +115,7 @@ $$
 \hat{x}(t) = \sum_{k=1}^{p} A_k x(t-k) + \sum_{k=1}^{p} B_k y(t-k)  + \sigma(t)
 $$
 
-Thus, the GC estimatiion for each channel $y$ is defined as:
+GC estimatiion for each channel $y$ is defined as:
 
 $$
 F_{y \to \hat{x}} = \ln \frac{\text{var}(\epsilon_x^{\text{reduced}})}{\text{var}(\epsilon_x^{\text{full}})}
@@ -246,7 +246,7 @@ Before running any GC estimation take into account the following limitation of t
 2) The number of channels included in the analysis is also a very important factor **to avoid overfitting and numerical instabilities** on $A$ or $\Sigma$ estimations. For this particular analysis we tested the GC between this group channels out of [Xu et al 2023 dataset](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) including frontal, central, and Temporal-Parietal-Occipital (TPO) regions ['T3','T4','T5','T6','P3','P4','O1','O2','C3','C4','F3','F4','F7','F8'].
 3) $p$ representing the maximum order of the estimation is also really important to avoid model overfitting or numerical instabilities. Extending an hyperparameter tuning is still an open plausible option in this case.
 
-Thus, the function **reading_eeg_saved_MVGC**` implements the full pipeline for loading preprocessed EEG stages from **preprocessed_save** folder and performing GC analysis using the MVGC toolbox.
+The function **reading_eeg_saved_MVGC** implements the full pipeline for loading preprocessed EEG stages from **preprocessed_save** folder and performing GC analysis using the MVGC toolbox.
 
 ### Function Overview
 
