@@ -87,9 +87,10 @@ Each file contains an EEGlab structure for each Near-Dead-Event (NDE) stages des
 
 ## 2. GC Estimation using MVGC toolbox
 
-The broad pipeline of the GC evaluation is shown in the following Figure
+The broad pipeline of the GC evaluation is shown in the following Figure.
 
-<img width="1245" height="359" alt="image" src="https://github.com/user-attachments/assets/2606beaf-f96b-4fc3-abcd-22b79b41d554" />
+<img width="1818" height="618" alt="image" src="https://github.com/user-attachments/assets/c741f201-fa12-41a1-b31e-80066fa40a18" />
+
 
 After the preprocessed files are located in the **preprocessed_save**, it is possible to proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. 
 ### GC definition following [Barret et al 2013](https://arxiv.org/pdf/1606.08644)
