@@ -178,8 +178,9 @@ $$
 
 This linear system can be written compactly as:
 
+```markdown
 ```math
-\boldsymbol{\Gamma}_1 =
+\mathbf{\Gamma}_1 =
 \begin{bmatrix}
 \Gamma(1) & \Gamma(2) & \cdots & \Gamma(p)
 \end{bmatrix}
@@ -187,8 +188,7 @@ This linear system can be written compactly as:
 \begin{bmatrix}
 A_1 & A_2 & \cdots & A_p
 \end{bmatrix}
-\boldsymbol{\Gamma}_p
-Solving this system yields the **VAR** coefficient matrices $A_k$.
+\mathbf{\Gamma}_p
 
 ---
 
