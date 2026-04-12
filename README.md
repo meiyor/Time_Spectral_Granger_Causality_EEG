@@ -1,7 +1,8 @@
 # Time_Spectral_Granger_Causality_EEG
 Granger Causality (GC) pipeline for evaluating channels predictability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu). Preliminary topoplot results showing spectral GC for patient **JF_20250225** are shown in the following Figure.
 
-<img width="1343" alt="image" src="https://github.com/user-attachments/assets/1e878531-5d4b-41e8-b4a9-194178f9c89a" />
+
+<img width="1817" height="763" alt="image" src="https://github.com/user-attachments/assets/c65c1950-b6ae-473e-a2ca-02718a972050" />
 
 
 An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S4** and **S6** stages. **P4** and **O2** are causality hubs receiving most of the $\text{FC}$ connections from the entire  $\text{FC}$ cortex. Similar GC measures are concentrated in $\theta$ and $\alpha$ bands for **S3** and **S4** being consistent with the right PAC and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
