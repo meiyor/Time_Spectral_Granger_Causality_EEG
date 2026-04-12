@@ -1,4 +1,4 @@
-# Time_Spectral_Granger_Causality_EEG
+<img width="1247" height="359" alt="image" src="https://github.com/user-attachments/assets/1b9f6dcb-47a0-4430-a828-7c0914c4c4d0" /># Time_Spectral_Granger_Causality_EEG
 Granger Causality (GC) pipeline for evaluating channels predicitability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link here and download the entire [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu).
 
 ## Requirements
@@ -74,19 +74,19 @@ The function **time_frequency_gc_single_edf** performs:
      Time-domain and spectral GC via **MVGC toolbox**
 
 After executing this preprocessing command you will observe the following **.mat** files. The filename string will contain the suffix you added as input before the .mat extension.
-In this case the suffix string is empty. This for the sake of comparison between different preprocessing options and for facilitating the exploration of resulting files across the **result_plots**, **preprocessed_save**, and **GC_estimation** folders.
+In this case the suffix string is empty. This is done for evaluation a comparison between different preprocessing options and for facilitating the exploration of resulting files across the **result_plots**, **preprocessed_save**, and **GC_estimation** folders.
 
 <img width="709" height="398" alt="image" src="https://github.com/user-attachments/assets/fa0e2606-ddea-4234-88b7-626b82c7ffeb" />
 
 
-Each file contains an EEGlab structure for each Near-Dead-Evennt (NDE) stages described in [Xu et al 2023] between **S1-S11** stages: having S1 as baseline stage before removing the ventilator, and from S2-S11 all the subsequent stages without the ventilator, switching multiple time the peacemaker activation. The file denoted with the preffix **JF_20250225** contains information with all the stages **S1-S11** separated for an adeaquate load using [**edfread.m**](https://www.mathworks.com/help/signal/ref/edfread.html). For loading large .edf files take into account that **edfreadm.m** can represent large loading throuput times. It is recommended a file or time-length segmentation before or as **edfread.m** input parameters.
+Each file contains an EEGlab structure for each Near-Dead-Event (NDE) stages described in [Xu et al 2023] between **S1-S11** stages: having S1 as baseline stage before removing the ventilator, and from S2-S11 all the subsequent stages without the ventilator, switching multiple time the peacemaker activation. The file denoted with the preffix **JF_20250225** contains information with all the stages **S1-S11** separated for an adeaquate load using [**edfread.m**](https://www.mathworks.com/help/signal/ref/edfread.html). For loading large .edf files take into account that **edfreadm.m** can represent large loading throuput times. It is recommended a file or time-length segmentation before or as **edfread.m** input parameters.
 
 ## 2. GC Estimation using MVGC toolbox
 
 After you get the preprocessed files in the **preprocessed_save**, you can proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. 
 ### GC definition following [Barret et al 2013](https://arxiv.org/pdf/1606.08644)
 
-For defininng the GC between two EEG channels $x$ and $\hat{x}$, we must first establish the linear interaction between both channels in time as follows:
+For defining the GC between two EEG channels $x$ and $\hat{x}$, we must first establish the linear interaction between both channels in time as follows:
 
 $$ 
     \hat{x(t)} = \sum_{k=0}^{p} A_{k} x(t-k) + \lambda \sigma(t)
@@ -101,10 +101,10 @@ $A_{k}$ are autoregressive coefficients or **VAR** matrix.
 In general way the **MVGC** toolbox evaluate whether $x$ Granger-causes $\hat{x}$. After $A_{k}$ and $sigma$ are estimatied, GC score is defined as taking into account a general model from all the possible contributions from any channel $y$. For extend the channel to channel GC to a full channel extended model, we can rewrite the interaction equation following  this:
 
 $$
-\hat{x}(t) = \sum_{k=1}^{p} A_k x(t-k) + \sum_{k=1}^{p} B_k y(t-k)  + \epsilon(t)
+\hat{x}(t) = \sum_{k=1}^{p} A_k x(t-k) + \sum_{k=1}^{p} B_k y(t-k)  + \sigma(t)
 $$
 
-Thus the GC estimatiion for each channel $y$ is defined as:
+Thus, the GC estimatiion for each channel $y$ is defined as:
 
 $$
 F_{y \to \hat{x}} = \ln \frac{\text{var}(\epsilon_x^{\text{reduced}})}{\text{var}(\epsilon_x^{\text{full}})}
@@ -217,6 +217,10 @@ with
 ```
 
 assuring a finite spectral rank of $\mathcal{A}$.
+
+To summarize a broad pipeline of this evaluation is shown in the following Figure
+
+<img width="1245" height="359" alt="image" src="https://github.com/user-attachments/assets/2606beaf-f96b-4fc3-abcd-22b79b41d554" />
 
 ---
 
