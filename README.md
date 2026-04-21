@@ -28,7 +28,7 @@ For execution a Matlab preprocessing follow this command:
 time_frequency_gc_single_edf_removing_ECG_definitive('<edf_filename_local>', '<output_file_suffix>', '<cell_preprocessing_activation>')
 ```
 
-The **cell_preprocessing_activation** must contain three values **{ICA_activator, ASR_activator, ECG_removal_activator}**, if any of the values in the cell is one. The corresponding prepreocessing phase will be activated (e.g. ICA, ASR, or ECG removal  stage-lagged regressor) and a corresponding suffix will be added as an identified in the **result_plots** and **preprocessed_save** folders.
+The **cell_preprocessing_activation** must contain three values **{ASR_activator, ICA_activator, ECG_removal_activator}**, if any of the values in the cell is one. The corresponding prepreocessing phase will be activated (e.g. ASR, ICA, or ECG removal  stage-lagged regressor) and a corresponding suffix will be added as an identified in the **result_plots** and **preprocessed_save** folders.
 
 For instance it is possible to evaluate the preprocessing with average rerefence using this command
 
@@ -36,7 +36,7 @@ For instance it is possible to evaluate the preprocessing with average rerefence
 time_frequency_gc_single_edf_removing_ECG_definitive('JF_20250225', '_average_reref', {1, 1, 1})
 ```
 
-Activating all the preprocessing knobs as **ICA**, **ASR**, and **ECG removal**.
+Activating all the preprocessing knobs as Independent Components Analysis (**ICA**)[https://sccn.ucsd.edu/~arno/eeglab/auto/runica.html], (**ASR**)[https://eeglab.org/plugins/clean_rawdata/], and (***ECG removal**)[].
 
 Or with Fz rereference with the following command
 
