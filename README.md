@@ -258,12 +258,12 @@ After time-domain GC measure is obtained, the MVGC toolbox calculates the direct
 
 Calculating the transfer function from the GC in time and translate it in the frequency domain as:
 
-$$
+```math
 H(f)=
 \left(
 I-\sum_{k=1}^{p} A_k e^{-i2\pi fk}
 \right)^{-1}
-$$
+```
 
 where:
 
@@ -316,9 +316,9 @@ $$
 
 and with $(i,j)$-th element of the spectral transfer matrix
 
-$$
+```math
 H(f)=\left(I-\sum_{k=1}^{p}A_k e^{-i2\pi fk}\right)^{-1}
-$$
+```
 
 representing the frequency-domain propagation from source channel $j$ to target channel $i$.
 
