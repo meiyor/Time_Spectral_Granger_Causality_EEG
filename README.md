@@ -28,7 +28,7 @@ For execution a Matlab preprocessing follow this command:
 time_frequency_gc_single_edf_removing_ECG_definitive('<edf_filename_local>', '<output_file_suffix>', '<cell_preprocessing_activation>')
 ```
 
-The **cell_preprocessing_activation** must contain three values **{ICA_activator, ASR_activator, ECG_removal_activator}**, if any of the values in the cell is one. The corresponding prepreocessing phase will be activated (e.g. ICA, ASR, or ECG removal  state-lagged regressor) and a corresponding suffix will be added as an identified in the **result_plots** and **preprocessed_save** folders.
+The **cell_preprocessing_activation** must contain three values **{ICA_activator, ASR_activator, ECG_removal_activator}**, if any of the values in the cell is one. The corresponding prepreocessing phase will be activated (e.g. ICA, ASR, or ECG removal  stage-lagged regressor) and a corresponding suffix will be added as an identified in the **result_plots** and **preprocessed_save** folders.
 
 For instance it is possible to evaluate the preprocessing with average rerefence using this command
 
@@ -46,7 +46,7 @@ time_frequency_gc_single_edf_removing_ECG_definitive('JF_20250225', '_Fz_reref',
 
 **Depending on the throughput quality and the amount of cores your of your machine processor this preprocessing can take 15-20mins for each patient .edf file om average laptop**
 
-The function **time_frequency_gc_single_edf_removing_ECG_definitive** performs the following preprocessin in that precise order to avoid GC sensitivity across diffetent channel re-references and preprocessing activation:
+The function **time_frequency_gc_single_edf_removing_ECG_definitive** performs the following preprocessin in that precise order to avoid GC sensitivity across different channel re-references and preprocessing selection:
  
   1) **Data Loading**
      
@@ -60,29 +60,27 @@ The function **time_frequency_gc_single_edf_removing_ECG_definitive** performs t
      
     a) Notch filter at 60 Hz.
     b) Bandpass filter (0.1–100 Hz).
-    
-  4) **ECG Artifact Removal**
+
+  4) **Channel Localization**
+     Standard 10–20 montage assignment for now
      
-     Status-lagged linear regression using ECG detrended and filtered signal between 1-100Hz. OLS regressor is used with a window of 80ms and including the derivative components of the ECG filtered signal. No Ridge regularization is needed.
+  5) **ECG Artifact Removal**
+     
+     Stage-lagged linear regression using ECG detrended and filtered signal between 1-100Hz. OLS regressor is used with a window of 80ms and including the derivative components of the ECG filtered signal. No Ridge regularization is needed.
    
-  5)  **Artifact Reduction**
+  6)  **Artifact Reduction**
      
     a) ASR-based cleaning (light EMG suppression).
     b) ICA decomposition (runica).
     c) Automatic IC rejection (heuristic-based) adding light severity suppressing for avoiding GC matrices singularity - even using pseudoinverse approaches.
 
-   5) **Re-referencing**
+  7) **Re-referencing**
        Average reference or Fz reference.
-
      
-     
-  7) **Channel Localization**
-     
-     Standard 10–20 montage assignment
      
   8) **GC Analysis** (optional) **can be evaluated later**
      
-     Time-domain and spectral GC via **MVGC toolbox**
+     Time-domain and spectral GC via **MVGC toolbox**, explained in the following section.
 
 After executing this preprocessing command you will observe the following **.mat** files. The filename string will contain the suffix you added as input before the .mat extension.
 In this case the suffix string is empty. This is done for evaluation a comparison between different preprocessing options and for facilitating the exploration of resulting files across the **result_plots**, **preprocessed_save**, and **GC_estimation** folders.
