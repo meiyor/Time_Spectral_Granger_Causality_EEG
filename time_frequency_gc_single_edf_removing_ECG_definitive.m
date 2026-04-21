@@ -128,6 +128,7 @@ if phases_active{1}==1
     end
     suffix_interim_asr='_ASR';
 else
+     X_eeg_clean=X_eeg_filtered;
      suffix_interim_asr='';
 end
 
