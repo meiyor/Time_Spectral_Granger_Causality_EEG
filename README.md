@@ -98,7 +98,7 @@ The broad pipeline of the GC evaluation is shown in the following Figure.
 
 
 After the preprocessed files are located in the **preprocessed_save**, it is possible to proceed with the GC estimation following the logic/workflow in the function called **reading_eeg_saved_MVGC**. 
-### GC definition following [Barret et al 2013](https://arxiv.org/pdf/1606.08644)
+### GC definition following [Barnett et al 2013](https://arxiv.org/pdf/1606.08644)
 
 For defining the GC between two EEG channels $x$ and $\hat{x}$, we must first establish the linear interaction between both channels in time as follows:
 
