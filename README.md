@@ -294,9 +294,45 @@ where:
 
 - $S_{ii}(f)$ is the autospectrum of target channel $i$
 - $H_{ij}(f)$ is the transfer component between the spectrum from source $j$ to target $i$
-- $Sigma_{jj}$ is the innovation variance of source channel $j$
+- $\Sigma_{jj}$ is the innovation variance of source channel $j$
 
-A larger value of $f_{j \rightarrow i}(f)$ indicates stronger predictive influence from channel $j$ to channel $i$ at frequency $f$.
+These spectral components are then calcuated following the Geweke formulations with
+
+$$
+S_{ii}(f)=\left[S(f)\right]_{ii}
+$$
+
+the $i$-th diagonal element of the spectral density matrix
+
+$$
+S(f)=H(f)\Sigma H(f)^{*}
+$$
+
+representing the autospectral power of target channel $i$ at frequency $f$.
+
+$$
+H_{ij}(f)=\left[H(f)\right]_{ij}
+$$
+
+and with $(i,j)$-th element of the spectral transfer matrix
+
+$$
+H(f)=\left(I-\sum_{k=1}^{p}A_k e^{-i2\pi fk}\right)^{-1}
+$$
+
+representing the frequency-domain propagation from source channel $j$ to target channel $i$.
+
+$$
+\Sigma_{jj}=\left[\Sigma\right]_{jj}
+$$
+
+the $j$-th diagonal element of the innovation covariance matrix
+
+$$
+\Sigma=\text{Cov}(\varepsilon_t)
+$$
+
+Summarizing these spectral measures, a larger value of $f_{j \rightarrow i}(f)$ indicates stronger predictive influence from channel $j$ to channel $i$ at frequency $f$.
 
 The time-domain GC is then recovered by integrating spectral GC across frequencies:
 
