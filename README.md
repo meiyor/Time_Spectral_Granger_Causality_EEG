@@ -36,7 +36,7 @@ For instance it is possible to evaluate the preprocessing with average rerefence
 time_frequency_gc_single_edf_removing_ECG_definitive('JF_20250225', '_average_reref', {1, 1, 1})
 ```
 
-Activating all the preprocessing knobs as Independent Components Analysis (**ICA**)[https://sccn.ucsd.edu/~arno/eeglab/auto/runica.html], (**ASR**)[https://eeglab.org/plugins/clean_rawdata/], and (***ECG removal**)[].
+Activating all the preprocessing knobs as Independent Components Analysis [**ICA**](https://sccn.ucsd.edu/~arno/eeglab/auto/runica.html), [**ASR**](https://eeglab.org/plugins/clean_rawdata/), and [**ECG removal**](https://github.com/meiyor/Time_Spectral_Granger_Causality_EEG/blob/main/utils/remove_ecg_multiple_stages_lagged_regression.m).
 
 Or with Fz rereference with the following command
 
