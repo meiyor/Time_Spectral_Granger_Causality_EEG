@@ -251,6 +251,72 @@ Before running any GC estimation take into account the following limitation of t
 
 The function **reading_eeg_saved_MVGC** implements the full pipeline for loading preprocessed EEG stages from **preprocessed_save** folder and performing GC analysis using the MVGC toolbox.
 
+### Frequency Decomposition using Geweke Spectral Granger Causality
+
+After time-domain GC measure is obtained, the MVGC toolbox calculates the directional predictability as a function of frequency using the formulation introduced by [Geweke](https://www.tandfonline.com/doi/pdf/10.1080/01621459.1982.10477803?casa_token=8wvugzOgOysAAAAA:Uc3dtknMgdeaTNUygova2AcwXDcfnceRnpuAH4fJmFxLNmuunewjYTW04SGkHMsK2sf67sPGaTAmww). This allows evaluating whether one channel predicts another preferentially the specific EEG bands evaluated here, such as, $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, $\gamma_{2}$). This process consists in:
+
+
+Calculating the transfer function from the GC in time and translate it in the frequency domain as:
+
+$$
+H(f)=
+\left(
+I-\sum_{k=1}^{p} A_k e^{-i2\pi fk}
+\right)^{-1}
+$$
+
+where:
+
+- $H(f)$ is the frequency response of the multivariate system  
+- $I$ is the identity matrix  
+- $f$ is frequency in Hz, normalized internally by sampling rate of the input signal, in this case 256 Hz.
+
+The spectral density matrix is then calculated as:
+
+$$
+S(f)=H(f)\Sigma H(f)^{*}
+$$
+
+where $\cdot)^$ is the conjugate transpose.
+
+For the directional influence from channel \(j\) to channel \(i\), Geweke spectral GC is defined as:
+
+```math
+f_{j \rightarrow i}(f)
+=
+\ln
+\frac
+{S_{ii}(f)}
+{S_{ii}(f)-H_{ij}(f)\Sigma_{jj}H_{ij}^{*}(f)}
+```
+
+where:
+
+- $S_{ii}(f)$ is the autospectrum of target channel $i$
+- $H_{ij}(f)$ is the transfer component between the spectrum from source $j$ to target $i$
+- $Sigma_{jj}$ is the innovation variance of source channel $j$
+
+A larger value of $f_{j \rightarrow i}(f)$ indicates stronger predictive influence from channel $j$ to channel $i$ at frequency $f$.
+
+The time-domain GC is then recovered by integrating spectral GC across frequencies:
+
+```math
+F_{j \rightarrow i}
+=
+\frac{1}{2\pi}
+\int_{-\pi}^{\pi}
+f_{j \rightarrow i}(\omega)\, d\omega
+```
+
+This decomposition is particularly useful for the EEG representation evaluated here because directional interactions often emerge selectively in oscillatory bands rather than uniformly across the spectrum. In this repository, band-wise averages are reported for:
+
+- \( \delta \) : 0–4 Hz  
+- \( \theta \) : 4–8 Hz  
+- \( \alpha \) : 8–13 Hz  
+- \( \beta \) : 13–25 Hz  
+- \( \gamma_1 \) : 25–55 Hz  
+- \( \gamma_2 \) : 80–100 Hz
+
 ### Function Overview
 
 The pipeline performs the following steps:
@@ -258,7 +324,7 @@ The pipeline performs the following steps:
 1. Load preprocessed EEG segments (S1–S11)
 2. Visualize stacked EEG signals from those segments
 3. Apply GC estimation using MVGC on each segments
-4. Generate frequency-specific GC measures for the different EEG band specified in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120), such as, $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, and $\gamma_{2}$.
+4. Generate frequency-specific GC measures for the different EEG band specified in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120), such as, $\delta$, $\theta$, $\alpha$, $\beta$, $\gamma_{1}$, and $\gamma_{2}$ as described above.
 
 Use the following the following Matlab command for executing the 
 
