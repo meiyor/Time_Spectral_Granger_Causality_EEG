@@ -25,7 +25,7 @@ cd /path/to/Time_Spectral_Granger_Causality_EEG
 For execution a Matlab preprocessing follow this command:
 
 ```matlab
-time_frequency_gc_single_edf_removing_ECG_definitive.m('<edf_filename_local>', '<output_file_suffix>', '<cell_preprocessing_activation>')
+time_frequency_gc_single_edf_removing_ECG_definitive('<edf_filename_local>', '<output_file_suffix>', '<cell_preprocessing_activation>')
 ```
 
 The **cell_preprocessing_activation** must contain three values **{ICA_activator, ASR_activator, ECG_removal_activator}**, if any of the values in the cell is one. The corresponding prepreocessing phase will be activated (e.g. ICA, ASR, or ECG removal  state-lagged regressor) and a corresponding suffix will be added as an identified in the **result_plots** and **preprocessed_save** folders.
@@ -33,45 +33,48 @@ The **cell_preprocessing_activation** must contain three values **{ICA_activator
 For instance it is possible to evaluate the preprocessing with average rerefence using this command
 
 ```matlab
-time_frequency_gc_single_edf('JF_20250225', '_average_reref')
+time_frequency_gc_single_edf_removing_ECG_definitive('JF_20250225', '_average_reref', {1, 1, 1})
 ```
+
+Activating all the preprocessing knobs as **ICA**, **ASR**, and **ECG removal**.
 
 Or with Fz rereference with the following command
 
 ```matlab
-time_frequency_gc_single_edf('JF_20250225', '_Fz_reref')
+time_frequency_gc_single_edf_removing_ECG_definitive('JF_20250225', '_Fz_reref', {1, 1, 1})
 ```
 
 **Depending on the throughput quality and the amount of cores your of your machine processor this preprocessing can take 15-20mins for each patient .edf file om average laptop**
 
-The function **time_frequency_gc_single_edf** performs:
+The function **time_frequency_gc_single_edf_removing_ECG_definitive** performs the following preprocessin in that precise order to avoid GC sensitivity across diffetent channel re-references and preprocessing activation:
  
   1) **Data Loading**
      
        Supports large EDF files via chunked reading, or direct loading using biosig depending on the size of the file.
      
-  2) **Re-referencing**
-     
-       Average reference or Fz reference.
-     
-  3) **Resampling**
+  2) **Resampling**
      
        Downsample to 256 Hz.
   
-  4) **Filtering**
+  3) **Filtering**
      
     a) Notch filter at 60 Hz.
     b) Bandpass filter (0.1–100 Hz).
     
+  4) **ECG Artifact Removal**
+     
+     Status-lagged linear regression using ECG detrended and filtered signal between 1-100Hz. OLS regressor is used with a window of 80ms and including the derivative components of the ECG filtered signal. No Ridge regularization is needed.
+   
   5)  **Artifact Reduction**
      
     a) ASR-based cleaning (light EMG suppression).
     b) ICA decomposition (runica).
     c) Automatic IC rejection (heuristic-based) adding light severity suppressing for avoiding GC matrices singularity - even using pseudoinverse approaches.
-    
-  6) **ECG Artifact Removal**
+
+   5) **Re-referencing**
+       Average reference or Fz reference.
+
      
-     Lagged linear regression using ECG reference channel
      
   7) **Channel Localization**
      
