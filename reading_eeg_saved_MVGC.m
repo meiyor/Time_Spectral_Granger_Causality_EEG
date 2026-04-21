@@ -1,4 +1,4 @@
-function reading_eeg_saved_MVGC(patient_path, suffix)
+function reading_eeg_saved_MVGC(patient_path, suffix_path, suffix)
 %% READING THE PREPROCESSED SAVED SUBSTRUCTURES FOR EACH STAGE S1-S11
 %% Description:
 %%   Loads segmented EEG stages, plots them, and runs MVGC analysis.
@@ -8,6 +8,7 @@ function reading_eeg_saved_MVGC(patient_path, suffix)
 %%
 %% Inputs:
 %%   patient_path - File prefix.
+%%   suffix_path - string suffix for reading the filename 
 %%   suffix - string suffix for reading the filename 
 %%   similar to the previous preprocessing step
 %%
@@ -36,6 +37,7 @@ badmask = contains(allp, 'freemat3.5_DISABLED');
 badpaths = allp(badmask);
 rmpath(genpath(['/home/jmm/Borjigin_Lab/MVGC1-master/utils/legacy/rng/rng.m']));
 rmpath((genpath(['/home/jmm/Borjigin_Lab/MVGC1-master/deprecated/utils/newline.m'])));
+rmpath(genpath('/home/jmm/Borjigin_Lab/eeglab_current/eeglab2026.0.0/plugins/Fieldtrip-lite250523'));
 
 if ~isempty(badpaths)
     rmpath(strjoin(badpaths, pathsep));
@@ -59,8 +61,8 @@ addpath(genpath([pwd '/preprocessing/']));
 EEG_list={};
 stage_names={};
 for stages = 1:11
-    X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages), suffix, '.mat']);
-    % X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages), '.mat']);
+    % X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages), suffix, '.mat']);
+    X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages), suffix_path, '.mat']);
     EEG_list{end+1} = X_sub_eeg.EEG_k;
     stage_names{end+1} = ['S', num2str(stages)];
 
@@ -69,12 +71,12 @@ stacked_eeg_plot_struct_list(EEG_list, 1:size(X_sub_eeg.EEG_k.data,1), stage_nam
 
 %% continue here reading the structiures if necessary
 freq_vector = {'theta', 'alpha', 'beta', 'gamma1', 'gamma2'};
-for stages = 10:11 %% generate the GC estimation and outputs for all the stages S1-S11 
-    X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages), suffix,'.mat']);
-    % X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages),'.mat']);
+for stages = 1:11 %% generate the GC estimation and outputs for all the stages S1-S11 
+    % X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages), suffix,'.mat']);
+    X_sub_eeg = load([patient_path, '_clean_and_splitted_S', num2str(stages), suffix_path, '.mat']);
     %% don't filter the signal if this is really necessary**
     %X_sub_eeg.EEG_k = pop_eegfiltnew(X_sub_eeg.EEG_k, 25, 55);
-    stacked_eeg_plot(X_sub_eeg.EEG_k, 1:size(X_sub_eeg.EEG_k.data,1), 1:min(5120, size(X_sub_eeg.EEG_k.data,2)), 20, 20, [patient_path, '_filter_', num2str(stages)]);
+    stacked_eeg_plot(X_sub_eeg.EEG_k, 1:size(X_sub_eeg.EEG_k.data,1), 1:min(5120, size(X_sub_eeg.EEG_k.data,2)), 20, 20, [patient_path, '_filter_', num2str(stages), suffix]);
     %% do it first for a value of p=20 %% generate the GC interim predictions depends on the p value you select
-    MVGC_application(X_sub_eeg.EEG_k, [patient_path, '_S', num2str(stages), suffix], 'custom', 20, freq_vector);
+    MVGC_application(X_sub_eeg.EEG_k, [patient_path, '_S', num2str(stages), suffix, suffix_path], 'custom', 20, freq_vector);
 end

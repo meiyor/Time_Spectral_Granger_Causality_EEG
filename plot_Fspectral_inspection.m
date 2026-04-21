@@ -36,6 +36,7 @@ badpaths = allp(badmask);
 
 rmpath(genpath('/home/jmm/Borjigin_Lab/MVGC1-master/utils/legacy/rng/rng.m'));
 rmpath(genpath('/home/jmm/Borjigin_Lab/MVGC1-master/deprecated/utils/newline.m'));
+rmpath(genpath('/home/jmm/Borjigin_Lab/eeglab_current/eeglab2026.0.0/plugins/Fieldtrip-lite250523'));
 
 if ~isempty(badpaths)
     rmpath(strjoin(badpaths, pathsep));
@@ -56,15 +57,15 @@ addpath(genpath([pwd '/preprocessing/']));
 %% base file for chanlocs % run this always if you want to read the pipeline from the beginning
 %X_base = load(['JF_20250225_clean_and_splitted_S1', suffix ,'.mat']);
 %% do this just in order to read the base file without suffix in the beginning
-X_base = load(['JF_20250225_clean_and_splitted_S1.mat']);
-all_labels = {X_base.EEG_k.chanlocs.labels};
+X_base = load(['JF_20250225_clean_and_splited_average_reref_ASR_ICA_ECG_rem.mat']);
+all_labels = {X_base.X_eeg_clean.chanlocs.labels};
 
 %% channel subset
 %%tpo_labels = {'T3','T4','T5','T6','P3','P4','O1','O2','Pz','C3','C4','Cz','F3','F4','Fz'};
 tpo_labels = {'T3','T4','T5','T6','P3','P4','O1','O2','C3','C4','F3','F4','F7','F8'};
 idx_tpo = find(ismember(all_labels, tpo_labels));
 chnames = all_labels(idx_tpo);
-chanlocs_tpo = X_base.EEG_k.chanlocs(idx_tpo);
+chanlocs_tpo = X_base.X_eeg_clean.chanlocs(idx_tpo);
 nvars = numel(idx_tpo);
 
 
@@ -135,7 +136,7 @@ for index_freq = 1:length(frequencies)
         fc_to_fc = 0;
         %% load GC result
         X_eval = load([pwd, '/GC_predictions/', path_patient, '_', ...
-            list_stages{index_status}, suffix, '_' frequencies{index_freq}, ...
+            list_stages{index_status}, suffix, suffix, '_', frequencies{index_freq}, ...
             '_p20_gc_band_results.mat']);
 
         F_band = X_eval.F_band;
@@ -273,7 +274,7 @@ for index_freq = 1:length(frequencies)
         for k = 1:nvars
             text(ax2, xy(k,1), xy(k,2)+0.038, chnames{k}, ...
                 'Color', [0.95 0.98 1.00], ...
-                'FontSize', 14, ...
+                'FontSize', 20, ...
                 'FontWeight', 'bold', ...
                 'HorizontalAlignment', 'center');
         end
@@ -287,8 +288,8 @@ for index_freq = 1:length(frequencies)
         clim(ax2, clim_vals{index_freq});
         cb2 = colorbar(ax2, 'eastoutside');
         cb2.Color = [0.95 0.98 1.00];
-        cb2.FontSize = 12;
-        ylabel(cb2, 'F_{spectral}', 'Color', [0.95 0.98 1.00], 'FontSize', 13);
+        cb2.FontSize = 18;
+        ylabel(cb2, 'F_{spectral}', 'Color', [0.95 0.98 1.00], 'FontSize', 18);
 
         %% fixed limits
         xlim(ax2, [-0.62 0.62]);
@@ -299,7 +300,7 @@ for index_freq = 1:length(frequencies)
 end
 
 %% plot the barplots related to GC contribution per ROI and frequencies..
-plot_barplots_percentage(number_connections, frequencies, path_patient);
+plot_barplots_percentage(number_connections, frequencies, path_patient, suffix);
 end
 
 %% ==========================================================
