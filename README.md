@@ -277,9 +277,9 @@ $$
 S(f)=H(f)\Sigma H(f)^{*}
 $$
 
-where $\cdot)^$ is the conjugate transpose.
+where $\cdot^{*}$ is the conjugate transpose.
 
-For the directional influence from channel \(j\) to channel \(i\), Geweke spectral GC is defined as:
+For the directional influence from channel $j$ to channel $i$, Geweke spectral GC is defined as:
 
 ```math
 f_{j \rightarrow i}(f)
