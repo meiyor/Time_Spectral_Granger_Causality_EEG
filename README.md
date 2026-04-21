@@ -25,13 +25,15 @@ cd /path/to/Time_Spectral_Granger_Causality_EEG
 For execution a Matlab preprocessing follow this command:
 
 ```matlab
-time_frequency_gc_single_edf('<edf_filename_local>', '<output_file_suffix>')
+time_frequency_gc_single_edf_removing_ECG_definitive.m('<edf_filename_local>', '<output_file_suffix>', '<cell_preprocessing_activation>')
 ```
+
+The **cell_preprocessing_activation** must contain three values **{ICA_activator, ASR_activator, ECG_removal_activator}**, if any of the values in the cell is one. The corresponding prepreocessing phase will be activated and a corresponding suffix will be added as an identified in the **result_plots** and **preprocessed_save** folders.
 
 For instance it is possible to evaluate the preprocessing with average rerefence using this command
 
 ```matlab
-time_frequency_gc_single_edf('JF_20250225', '_average')
+time_frequency_gc_single_edf('JF_20250225', '_average_reref')
 ```
 
 Or with Fz rereference with the following command
