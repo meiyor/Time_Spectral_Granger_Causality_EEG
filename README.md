@@ -9,12 +9,24 @@ These plots included the GC measures for **average** reference
 
 <img width="1810" height="753" alt="image" src="https://github.com/user-attachments/assets/842e2bc9-28da-401f-83da-14d8f388384e" />
 
+
 for **Fz** reference
+
 
 <img width="1809" height="758" alt="image" src="https://github.com/user-attachments/assets/f07c0048-412d-4588-abf2-0cf69c7dd514" />
 
+for **Cz** reference
 
-An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S4** and **S6** stages. **P4** and **O2** are causality hubs receiving most of the $\text{FC}$ connections from the entire  $\text{FC}$ cortex. Similar GC measures are concentrated in $\theta$ and $\alpha$ bands for **S3** and **S4** being consistent with the right Phase Amplitude Coupling (PAC) and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
+<img width="1812" height="764" alt="image" src="https://github.com/user-attachments/assets/b5f1ae92-8cfb-4437-bf7c-944d276be58b" />
+
+
+and for **Pz** reference
+
+
+<img width="1812" height="762" alt="image" src="https://github.com/user-attachments/assets/d3292a57-af6d-424d-a5b2-6814b9e2ffd6" />
+
+
+An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S5** and **S7** stages. **TPO** channels are causality hubs receiving most of the $\text{FC}$ connections being concentrated in the left for **S2** and **S3** stages and in the right. This GC measures increased are concentrated in $\gamma_{1}$ and $\gamma_{2}$ are consistent with the bilateral Phase Amplitude Coupling (PAC) and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
 
 ## Requirements
 
