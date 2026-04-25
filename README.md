@@ -9,21 +9,23 @@ These plots included the GC measures for **average** reference
 
 <img width="1810" height="753" alt="image" src="https://github.com/user-attachments/assets/842e2bc9-28da-401f-83da-14d8f388384e" />
 
-
-
+<br>
+<br>
 
 for **Fz** reference
 
 
 <img width="1809" height="758" alt="image" src="https://github.com/user-attachments/assets/f07c0048-412d-4588-abf2-0cf69c7dd514" />
 
-
+<br>
+<br>
 
 for **Cz** reference
 
 <img width="1812" height="764" alt="image" src="https://github.com/user-attachments/assets/b5f1ae92-8cfb-4437-bf7c-944d276be58b" />
 
-
+<br>
+<br>
 
 and for **Pz** reference
 
