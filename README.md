@@ -1,11 +1,20 @@
 # Time_Spectral_Granger_Causality_EEG
-Granger Causality (GC) pipeline for evaluating channels predictability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu). Preliminary topoplot results showing spectral GC for patient **JF_20250225** are shown in the following Figure.
+Granger Causality (GC) pipeline for evaluating channels predictability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu). 
+
+Preliminary topoplot results showing spectral GC for patient **JF_20250225** are shown in the following Figure. We implemented a sensitivity analysis across different unipolar re-reference on **Fz**, **Cz**, and **Pz** channels for testing re-reference variability on the middle line, as well as average reference. 
+
+[Faes et al 2011](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.83.051112) and [Trongnetrpunya et al 2015](https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2015.00189/full) suggest to use a multipolar reference after the application of ASR and ICA artifact removal, to reduce sensitivity in GC estimations.
+
+These plots included the GC measures for **average** reference 
+
+<img width="1810" height="753" alt="image" src="https://github.com/user-attachments/assets/842e2bc9-28da-401f-83da-14d8f388384e" />
+
+for **Fz** reference
+
+<img width="1809" height="758" alt="image" src="https://github.com/user-attachments/assets/f07c0048-412d-4588-abf2-0cf69c7dd514" />
 
 
-<img height="1963" alt="image" src="https://github.com/user-attachments/assets/c65c1950-b6ae-473e-a2ca-02718a972050" />
-
-
-An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S4** and **S6** stages. **P4** and **O2** are causality hubs receiving most of the $\text{FC}$ connections from the entire  $\text{FC}$ cortex. Similar GC measures are concentrated in $\theta$ and $\alpha$ bands for **S3** and **S4** being consistent with the right PAC and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
+An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S4** and **S6** stages. **P4** and **O2** are causality hubs receiving most of the $\text{FC}$ connections from the entire  $\text{FC}$ cortex. Similar GC measures are concentrated in $\theta$ and $\alpha$ bands for **S3** and **S4** being consistent with the right Phase Amplitude Coupling (PAC) and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
 
 ## Requirements
 
