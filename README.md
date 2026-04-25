@@ -1,7 +1,7 @@
 # Time_Spectral_Granger_Causality_EEG
 Granger Causality (GC) pipeline for evaluating channels predictability from data from [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). For downloading the data refer to the Zenodo link [here](https://zenodo.org/record/7803212#.ZC3Cb-zML0q) and download the entire dataset. For any inquiry about data request or extra detail in code execution please don't hesitate to reach professor Jimo Borjigin, PhD [here](mailto:borjigin@umich.edu). 
 
-Preliminary topoplot results showing spectral GC for patient **JF_20250225** are shown in the following Figures. We implemented a sensitivity analysis across different unipolar re-reference on **Fz**, **Cz**, and **Pz** channels for testing re-reference variability on the middle line, as well as average reference. 
+Preliminary topoplot results with the spectral GC meaaures for patient **JF_20250225** are shown in the following Figures. We implemented a sensitivity analysis across different unipolar re-reference on **Fz**, **Cz**, and **Pz** channels for testing re-reference variability on the middle line, as well as average reference. 
 
 [Faes et al 2011](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.83.051112) and [Trongnetrpunya et al 2015](https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2015.00189/full) suggest to use a multipolar reference after the application of ASR and ICA artifact removal, to reduce sensitivity in GC estimations.
 
