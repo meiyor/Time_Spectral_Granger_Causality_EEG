@@ -32,8 +32,27 @@ and for **Pz** reference
 
 <img width="1812" height="762" alt="image" src="https://github.com/user-attachments/assets/d3292a57-af6d-424d-a5b2-6814b9e2ffd6" />
 
+<br>
+<br>
 
-An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S5** and **S7** stages. **TPO** channels are causality hubs receiving most of the $\text{FC}$ connections being concentrated in the left for **S2** and **S3** stages and in the right. This GC measures increased are concentrated in $\gamma_{1}$ and $\gamma_{2}$ are consistent with the bilateral Phase Amplitude Coupling (PAC) and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120).
+An increased GC is observed in $\gamma_{1}$ and $\gamma_{2}$ supported by high causality measures on $\text{FC} \rightarrow \text{TPO}$ areas in **S5** and **S7** stages. **TPO** channels are causality hubs receiving most of the $\text{FC}$ connections being concentrated in the left for **S2** and **S3** stages and in the right. This GC measures increased are concentrated in $\gamma_{1}$ and $\gamma_{2}$ are consistent with the bilateral Phase Amplitude Coupling (PAC) and NTSE activations reported in [Xu et al 2023](https://www.pnas.org/doi/abs/10.1073/pnas.2216268120). 
+
+
+GC contributions between S2-S11 stages are shown in the following Figure for $\gamma_{1}$
+
+
+<img width="1724" height="734" alt="image" src="https://github.com/user-attachments/assets/0f7a2dda-4fd7-4fd2-9a0a-ac05e082eceb" />
+
+<br>
+<br>
+
+and for $\gamma_{2}$ here
+
+
+<img width="1728" height="737" alt="image" src="https://github.com/user-attachments/assets/add816e2-e40f-479b-b009-c67de68d5572" />
+
+<br>
+<br>
 
 ## Requirements
 
