@@ -393,12 +393,12 @@ f_{j \rightarrow i}(\omega)\, d\omega
 
 This decomposition is particularly useful for the EEG representation evaluated here because directional interactions often emerge selectively in oscillatory bands rather than uniformly across the spectrum. In this repository, band-wise averages are reported for:
 
-- \( \delta \) : 0–4 Hz  
-- \( \theta \) : 4–8 Hz  
-- \( \alpha \) : 8–13 Hz  
-- \( \beta \) : 13–25 Hz  
-- \( \gamma_1 \) : 25–55 Hz  
-- \( \gamma_2 \) : 80–100 Hz
+- $\delta$ : 0–4 Hz  
+- $\theta$ : 4–8 Hz  
+- $\alpha$ : 8–13 Hz  
+- $\beta$ : 13–25 Hz  
+- $\gamma_{1}$ : 25–55 Hz  
+- $\gamma_{2}$ : 80–100 Hz
 
 ### Function Overview
 
