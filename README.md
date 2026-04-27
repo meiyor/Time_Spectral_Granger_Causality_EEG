@@ -3,7 +3,7 @@ Granger Causality (GC) pipeline for evaluating channels predictability from data
 
 Preliminary topoplot results with the spectral GC meaaures for patient **JF_20250225** are shown in the following Figures. We implemented a sensitivity analysis across different unipolar re-reference on **Fz**, **Cz**, and **Pz** channels for testing re-reference variability on the middle line, as well as average reference. 
 
-[Faes et al 2011](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.83.051112) and [Trongnetrpunya et al 2015](https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2015.00189/full) suggest to use a multipolar reference after the application of ASR and ICA artifact removal, to reduce sensitivity in GC estimations.
+[Faes et al 2011](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.83.051112) and [Trongnetrpunya et al 2015](https://www.frontiersin.org/journals/systems-neuroscience/articles/10.3389/fnsys.2015.00189/full) suggest to use a multipolar reference after the application of ASR and ICA artifact removal, to reduce sensitivity in GC estimations. All the GC pairwise directions over the half of the quartile of the amplitude per frequency are statisticially significant after FDR correction $t(2,135)>5.47, p<0.001$. 
 
 These plots included the GC measures for **average** reference 
 
