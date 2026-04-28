@@ -54,6 +54,25 @@ and for $\gamma_{2}$ here
 <br>
 <br>
 
+There is significant difference adding the regressor for ECG artifact removal in the $\gamma_{1}$ and $\gamma_{2}$ GC arbitraty units across areas for $\text{FC} \rightarrow \text{TPO}$, $\text{TPO} \rightarrow \text{FC}$, $\text{FC} \rightarrow \text{FC}$, and $\text{TPO} \rightarrow \text{TPO}$
+
+These plots shows the GC a.u. differenes across **Fz**, **Cz**, and **Pz** references for $\gamma_{1}$
+
+<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/973767e5-b2ed-4d3b-8a48-b540e4a202ac" />
+
+and for $\gamma_{2}$
+
+<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/8af219e6-c0c0-471a-b94c-9c152b8f6886" />
+
+In the following plots we illustrate the GC contributions in percentage for $\text{FC} \rightarrow \text{TPO}$, $\text{TPO} \rightarrow \text{FC}$, $\text{FC} \rightarrow \text{FC}$,and $\text{TPO} \rightarrow \text{TPO}$ directions. Here are the plots for $\gamma_{1}$
+
+<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/f687ac34-51fc-4558-9252-9f70eda6f1d3" />
+
+and for $\gamma_{2}$
+
+<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/3163fb61-5c12-4c24-82ce-d26f1cd9308d" />
+
+
 ## Requirements
 
 Before running be sure you have installed **Matlab** version **R2025a** or more recent, as well as
