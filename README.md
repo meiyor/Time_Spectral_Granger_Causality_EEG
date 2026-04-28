@@ -58,19 +58,21 @@ There is significant difference adding the regressor for ECG artifact removal in
 
 These plots shows the GC a.u. differenes across **Fz**, **Cz**, and **Pz** references for $\gamma_{1}$
 
-<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/973767e5-b2ed-4d3b-8a48-b540e4a202ac" />
+<img width="1720" height="772" alt="image" src="https://github.com/user-attachments/assets/b08c03bc-5963-4779-ad77-70ce8432116e" />
 
 and for $\gamma_{2}$
 
-<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/8af219e6-c0c0-471a-b94c-9c152b8f6886" />
+<img width="1720" height="772" alt="image" src="https://github.com/user-attachments/assets/13938135-6fdb-48d9-aed1-1e1e87677a9c" />
+
 
 In the following plots we illustrate the GC contributions in percentage for $\text{FC} \rightarrow \text{TPO}$, $\text{TPO} \rightarrow \text{FC}$, $\text{FC} \rightarrow \text{FC}$,and $\text{TPO} \rightarrow \text{TPO}$ directions. Here are the plots for $\gamma_{1}$
 
-<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/f687ac34-51fc-4558-9252-9f70eda6f1d3" />
+<img width="1720" height="772" alt="image" src="https://github.com/user-attachments/assets/41cdfd2b-0183-447b-87fe-dfc84e2a1714" />
+
 
 and for $\gamma_{2}$
 
-<img width="1720" height="780" alt="image" src="https://github.com/user-attachments/assets/3163fb61-5c12-4c24-82ce-d26f1cd9308d" />
+<img width="1720" height="772" alt="image" src="https://github.com/user-attachments/assets/0661ff69-dbe6-4429-8f71-a0758a34018d" />
 
 
 ## Requirements
