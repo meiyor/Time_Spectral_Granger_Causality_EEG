@@ -1,4 +1,4 @@
-function time_frequency_gc_single_edf_removing_ECG_definitive(path_patient, suffix, phases_active)
+function time_frequency_gc_single_edf_removing_ECG_definitive(path_patient, suffix, phases_active, regressor_method, regularization_lambda)
 %% get here the loaded environments to run Granger Causality following the MVGC Barnett's toolbox for multi-channel and multi-trial time-series.
 %% This snippet of code will be tested in a tested .edf files from the Borjigin Data folder downloaded from Zenodo and representing a complement
 %% for the biomarkers calculated in [Xu et al 2023]
@@ -13,6 +13,8 @@ function time_frequency_gc_single_edf_removing_ECG_definitive(path_patient, suff
 %%   suffix       - Processing variant (e.g., reference type).
 %%   phases_active - cell with the indicators of what evaluation will be done 
 %%                   phases_active{1} activates ASR, phases_active{1} activates ICA, 
+%%   regressor_method - type of regressor (e.g. 'ols', 'ridge')
+%%   regularization_lambda - type of regularization only applicable for ridge
 %% Outputs:
 %%   None (results saved).
 %%
@@ -99,8 +101,8 @@ X_eeg_filtered = pop_eegfiltnew(X_eeg_filter_notch, 0.1, 100);
 if phases_active{3}==1
     cfg = struct;
     cfg.maxlag_ms = 100; %% set this in 80ms pleae filter the ECG signal between 1-100Hz
-    cfg.lambda = 10; %% ridge regularization only if necessary
-    cfg.method = 'ols'; %% use ols for more robust regression
+    cfg.lambda = regularization_lambda; %% ridge regularization only if necessary
+    cfg.method = regressor_method; %% use ols for more robust regression more aggresive in this case,test ridge a bit
     cfg.use_derivative = true;
     cfg.match_mode = 'exact';
     cfg.use_all_matches = false;
@@ -109,7 +111,11 @@ if phases_active{3}==1
 
     %% do the tappered signal reconstruction with the status corrected around 100ms
     X_eeg_filtered = recombine_cleaned_stage_segments(X_eeg_filtered, X_eeg_clean_s, true, 100);
-    suffix_interim_ecg='_ECG_rem';
+    if strcmp(regressor_method, 'ols')
+       suffix_interim_ecg='_ECG_rem';
+    else
+        suffix_interim_ecg=['_ECG_rem_ridge_', num2str(regularization_lambda)];
+    end
 else
     suffix_interim_ecg='';
 end
