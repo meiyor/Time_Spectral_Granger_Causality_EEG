@@ -74,7 +74,7 @@ and for $\gamma_{2}$
 
 <img width="1720" height="772" alt="image" src="https://github.com/user-attachments/assets/0661ff69-dbe6-4429-8f71-a0758a34018d" />
 
-After using the regressor for ECG artifact removal the directions switch from  $\text{TPO} \rightarrow \text{FC}$ to $\text{FC} \rightarrow \text{TPO}$ supporting a more pronounced activity in frontal areas that process cogntion to predict somatosensory and emotional/interoception processing areas from more refined neural representation. This effect is more pronounced for **Fz** and **Cz** references and for S2-S9 stages.
+After using the regressor for ECG artifact removal the directions switch from  $\text{TPO} \rightarrow \text{FC}$ to $\text{FC} \rightarrow \text{TPO}$ supporting a more pronounced activity in frontal areas that process cogntion to predict activity in areas processing omatosensory and emotional/interoception stimuli. This is an important effect because this switching occurs when the EEG is a more refined neural representation without the ECG artifactual incidence. This effect ismore prononded for **Fz** and **Cz** references and between S2-S9 stages.
 
 ## Requirements
 
