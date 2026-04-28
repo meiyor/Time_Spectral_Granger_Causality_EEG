@@ -160,8 +160,8 @@ if phases_active{2}==1
     rmpath(genpath('/home/jmm/Borjigin_Lab/eeglab_current/eeglab2026.0.0/plugins/Fieldtrip-lite250523'));
     %% apply Artifact recognition using heuristic classification
     % [bad_ic, feat] = auto_reject_ica_no_topo(X_eeg_clean);
-    [bad_ic, feat] = auto_reject_ica_no_topo_minimal(X_eeg_clean, 3);
-    %[bad_ic, feat] = auto_reject_ica_with_ecg_ref(X_eeg_clean, ECG_res, 1); %% evaluate the new ICA including filgtered ECG as reference
+    % [bad_ic, feat] = auto_reject_ica_no_topo_minimal(X_eeg_clean, 3);
+    [bad_ic, feat] = auto_reject_ica_with_ecg_ref(X_eeg_clean, ECG_res, 1); %% evaluate the new ICA including filgtered ECG as reference
     
     disp(feat)
     disp('Bad ICs:')
