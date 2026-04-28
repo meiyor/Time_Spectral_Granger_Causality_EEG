@@ -161,7 +161,7 @@ if phases_active{2}==1
     %% apply Artifact recognition using heuristic classification
     % [bad_ic, feat] = auto_reject_ica_no_topo(X_eeg_clean);
     [bad_ic, feat] = auto_reject_ica_no_topo_minimal(X_eeg_clean, 3);
-    [bad_ic, feat] = auto_reject_ica_with_ecg_ref(X_eeg_clean, ECG_res, 1); %% evaluate the new ICA including filgtered ECG as reference
+    %[bad_ic, feat] = auto_reject_ica_with_ecg_ref(X_eeg_clean, ECG_res, 1); %% evaluate the new ICA including filgtered ECG as reference
     
     disp(feat)
     disp('Bad ICs:')
@@ -182,6 +182,8 @@ elseif contains(suffix,'Cz')
    X_eeg_clean = pop_reref(X_eeg_clean, 'Cz');
 elseif contains(suffix,'Pz')
    X_eeg_clean = pop_reref(X_eeg_clean, 'Pz');
+elseif contains(suffix, 'Hjorth') || contains(suffix, 'hjorth')
+   X_eeg_clean = apply_hjorth4_all_channels(X_eeg_clean); %% implement the Hjorth 4-nearest amplitude substraction
 else
    X_eeg_clean = pop_reref(X_eeg_clean, []);
 end

@@ -294,6 +294,7 @@ for index_freq = 1:length(frequencies)
         %% fixed limits
         xlim(ax2, [-0.62 0.62]);
         ylim(ax2, [-0.62 0.68]);
+
         savefig(fig, [pwd, '/plot_topo_no_norm/', path_patient, suffix, '_', frequencies{index_freq}, '_' ,list_stages{index_status}, '_p20', '_topo_results.fig']);
         saveas(gcf, [pwd, '/plot_topo_no_norm/', path_patient, suffix, '_', erase(frequencies{index_freq},'\'), '_' , list_stages{index_status}, '_p20' , '_topo_results.jpg']);
     end
